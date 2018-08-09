@@ -9,14 +9,13 @@ function operating_system {
     if [[ $OS == "Linux" ]]; then
          CAT=$(cat /etc/os-release | grep "NAME" | cut -d '=' -f 2 | head -n 1 | cut -d '"' -f 2)
 
-         printf "OS: "
          if [[ $CAT == "Gentoo" ]]; then
-              printf "Gentoo Linux."
+              printf "Gentoo Linux"
          elif [[ $CAT == "CentOS Linux" ]]; then
-              printf "CentOS."
+              printf "CentOS"
          else
               # $CAT is right for Fedora and Linux Mint, at least
-              printf "$CAT."
+              printf "$CAT"
          fi
     else
 
@@ -33,7 +32,7 @@ function kernel {
 
 }
 
-PROMPT='$fg_bold[yellow][%D{%H:%M:%S}]$reset_color%} %{$fg_bold[green]%}%n%{$fg_bold[cyan]%}@%{$fg_bold[red]%}%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
+PROMPT='$fg_bold[yellow][%D{%H:%M:%S}]$reset_color%} %{$fg_bold[green]%}%n%{$fg_bold[cyan]%}@%{$fg_bold[red]%}$(operating_system) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
 % $(prompt_char)%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
