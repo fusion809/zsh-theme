@@ -13,6 +13,8 @@ function operating_system {
               printf "Gentoo Linux"
          elif [[ $CAT == "CentOS Linux" ]]; then
               printf "CentOS"
+         elif [[ $CAT == "void" ]]; then
+              printf "Void"
          else
               # $CAT is right for Fedora and Linux Mint, at least
               printf "$CAT"
@@ -32,8 +34,13 @@ function kernel {
 
 }
 
-PROMPT='$fg_bold[yellow][%D{%H:%M:%S}]$reset_color%} %{$fg_bold[green]%}%n%{$fg_bold[cyan]%}@%{$fg_bold[red]%}$(operating_system) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
+if [[ $USER == "root" ]]; then
+	PROMPT='$fg_bold[yellow][%D{%H:%M:%S}|$(operating_system)$fg_bold[yellow]] %{$fg_bold[red]%}%n%{$fg_bold[cyan]%} %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
 % $(prompt_char)%{$reset_color%} '
+else
+	PROMPT='$fg_bold[yellow][%D{%H:%M:%S}|$(operating_system)$fg_bold[yellow]] %{$fg_bold[green]%}%n%{$fg_bold[cyan]%} %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
+% $(prompt_char)%{$reset_color%} '
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=") "
