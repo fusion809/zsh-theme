@@ -53,7 +53,7 @@ elif [[ ${OPS} == "CentOS" ]]; then
 elif [[ ${OPS} == "FreeBSD" ]] || [[ ${OPS} == "Scientific Linux" ]] || [[ ${OPS} == "Ubuntu" ]] ; then
 	PROMPT='$fg_bold[yellow][%D{%H:%M:%S}|$fg_bold[red]${OPS}] $(user) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
 % $(prompt_char)%{$reset_color%} '
-elif [[ ${OPS} == "Arch Linux" ]] || [[ ${OPS} == "Fedora" ]]; then
+elif [[ ${OPS} == "Arch Linux" ]] || [[ ${OPS} == "Fedora" ]] || [[ ${OPS} == "Mageia" ]]; then
 	PROMPT='$fg_bold[yellow][%D{%H:%M:%S}|$fg_bold[blue]${OPS}] $(user) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
 % $(prompt_char)%{$reset_color%} '
 elif [[ ${OPS} == "Gentoo Linux" ]]; then
