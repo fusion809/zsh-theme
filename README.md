@@ -1,7 +1,13 @@
 # fusion809's Zsh themes
-The main difference between these themes is how compact, or not their time and date format is. 
+The main difference between these themes is how compact, or not their time and date format is. They each display:
 
-**hcompact** uses the most brief format, which merely consists of the time in 24 hour format:
+* Time, and in the case of hfulldate and hornix, the date.
+* Directory, with `~` being used to denote the present user's home directory.
+* Operating system. If the OS is Linux (my usual OS), the specific distribution is mentioned. Colour is adjusted according to OS. 
+* User name. If the user is root the colour of the user name is red, otherwise green. 
+* Prompt icon, `$` if regular user and `#` if root user. 
+
+**hcompact** uses the most time/date brief format, which merely consists of the time in 24 hour format:
 
 ![](https://github.com/fusion809/zsh-theme/raw/master/hcompact/hcompact.png)
 

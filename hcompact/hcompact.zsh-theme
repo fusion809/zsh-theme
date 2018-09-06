@@ -7,7 +7,7 @@ function operating_system {
     OPS=$(uname)
 
     if [[ $OPS == "Linux" ]]; then
-         CAT=$(cat /etc/os-release | grep "NAME" | cut -d '=' -f 2 | head -n 1 | cut -d '"' -f 2)
+         CAT=$(grep "NAME" < /etc/os-release | cut -d '=' -f 2 | head -n 1 | cut -d '"' -f 2)
 
          if [[ $CAT == "Gentoo" ]]; then
               printf "Gentoo Linux"

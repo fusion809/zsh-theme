@@ -1,36 +1,36 @@
 function prompt_char {
-    if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}%_#"; else echo "%{$fg_bold[green]%}%_$"; fi
+	if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}%_#"; else echo "%{$fg_bold[green]%}%_$"; fi
 }
 
 function operating_system {
 
-    OPS=$(uname)
+	OPS=$(uname)
 
-    if [[ $OPS == "Linux" ]]; then
-         CAT=$(cat /etc/os-release | grep "NAME" | cut -d '=' -f 2 | head -n 1 | cut -d '"' -f 2)
+	if [[ $OPS == "Linux" ]]; then
+		 CAT=$(grep "NAME" < /etc/os-release | cut -d '=' -f 2 | head -n 1 | cut -d '"' -f 2)
 
-         if [[ $CAT == "Gentoo" ]]; then
-              printf "Gentoo Linux"
-         elif [[ $CAT == "CentOS Linux" ]]; then
-              printf "CentOS"
-         elif [[ $CAT == "void" ]]; then
-              printf "Void"
-         else
-              # $CAT is right for Fedora and Linux Mint, at least
-              printf "$CAT"
-         fi
-    else
+		 if [[ $CAT == "Gentoo" ]]; then
+			  printf "Gentoo Linux"
+		 elif [[ $CAT == "CentOS Linux" ]]; then
+			  printf "CentOS"
+		 elif [[ $CAT == "void" ]]; then
+			  printf "Void"
+		 else
+			  # $CAT is right for Fedora and Linux Mint, at least
+			  printf "$CAT"
+		 fi
+	else
 
-         printf "$OPS"
+		 printf "$OPS"
 
-    fi
+	fi
 }
 
 function kernel {
 
-    KERNEL=$(uname -r)
+	KERNEL=$(uname -r)
 
-    printf "Kernel: $KERNEL"
+	printf "Kernel: $KERNEL"
 
 }
 
