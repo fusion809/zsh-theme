@@ -13,7 +13,7 @@ The main difference between these themes is how compact, or not their time and d
 
 **hfulldate** uses the most verbose time/date format, which consists of time in AM/PM format, along with day of the week in full (e.g. Monday vs Mon), day of the month, month name in full (e.g. September instead of Sep) and year name in full (2018 as opposed to 18):
 
-![](https://github.com/fusion809/zsh-theme/raw/master/hfulldate/hfulldate.png)
+![](https://github.com/fusion809/zsh-theme/raw/master/hfulldate/hfulldate-full-screenshot-20181020.png)
 
 **hornix** uses a time/date format intermediate in length:
 
