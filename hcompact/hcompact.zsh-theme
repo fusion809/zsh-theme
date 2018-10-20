@@ -35,7 +35,7 @@ function kernel {
 }
 
 function user {
-	if [[ $USER == "root" ]]; then
+	if id | grep root > /dev/null 2>&1; then
 		printf '\e[1;31m%-6s\e[m' "root"
 	else
 		printf '\e[1;32m%-6s\e[m' "${USER}"
