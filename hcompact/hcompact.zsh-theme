@@ -21,7 +21,21 @@ function operating_system {
          fi
     else
 
-         printf "$OPS"
+	if [[ $OPS == "FreeBSD" ]]; then
+
+		if uname -r | grep RELEASE > /dev/null 2>&1 ; then
+			VERSION=$(uname -r | grep RELEASE | cut -d '-' -f 1)
+		else
+			VERSION=$(uname -r)
+		fi
+
+		printf "$OPS $VERSION"
+
+	else
+
+		printf "$OPS $(uname -r)"
+
+	fi
 
     fi
 }
