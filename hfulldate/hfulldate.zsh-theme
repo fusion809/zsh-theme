@@ -1,5 +1,9 @@
 function prompt_char {
-	if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}%_#"; else echo "%{$fg_bold[green]%}%_$"; fi
+	if [ $UID -eq 0 ]; then
+		echo "%{$fg_bold[red]%}%_#"
+	else
+		echo "%{$fg_bold[green]%}%_$"
+	fi
 }
 
 function operating_system {
