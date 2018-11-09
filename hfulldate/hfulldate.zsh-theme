@@ -1,9 +1,5 @@
 function prompt_char {
-	if [ $UID -eq 0 ]; then
-		echo "%{$fg_bold[red]%}%_#"
-	else
-		echo "%{$fg_bold[green]%}%_$"
-	fi
+	if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}%_#"; else echo "%{$fg_bold[green]%}%_$"; fi
 }
 
 function operating_system {
@@ -25,23 +21,7 @@ function operating_system {
 		 fi
 	else
 
-		if [[ $OPS == "FreeBSD" ]]; then
-
-			if uname -r | grep RELEASE > /dev/null 2>&1 ; then
-
-				VERSION=$(uname -r | grep RELEASE | cut -d '-' -f 1)
-
-			else
-				VERSION=$(uname -r)
-			fi
-
-			printf "$OPS $VERSION"
-
-		else
-
-			printf "$OPS"
-
-		fi
+		 printf "$OPS"
 
 	fi
 }
