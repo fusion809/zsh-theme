@@ -44,7 +44,7 @@ function user {
 
 export OPS=$(operating_system)
 
-if [[ ${OPS} == "openSUSE"* ]] || [[ ${OPS} == "Linux Mint" ]]; then
+if [[ ${OPS} == "openSUSE"* ]] || [[ ${OPS} == "NixOS"* ]] || [[ ${OPS} == "Linux Mint" ]]; then
 	PROMPT='$fg_bold[yellow][%D{%H:%M:%S %d/%m/%y}|$fg_bold[green]${OPS}] $(user) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)
 % $(prompt_char)%{$reset_color%} '
 elif [[ ${OPS} == "CentOS" ]]; then
